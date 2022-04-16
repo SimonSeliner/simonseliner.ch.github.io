@@ -1,0 +1,86 @@
+@import '../../scss/settings.scss';
+
+.Timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.TimelineItem {
+  width: calc(50% + 1px);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  padding-top: 0rem;
+
+  &-Period {
+    background-color: var(--light-grey);
+    color: var(--black);
+    font-weight: bold;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    margin-top: -1rem;
+  }
+
+  &-Title {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 1rem 0;
+  }
+
+  &-TitleIcon {
+    margin-right: 1rem;
+  }
+
+  &-Dot {
+    background-color: var(--black);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1rem;
+  }
+
+  &:nth-child(2n - 1) {
+    align-self: flex-end;
+    align-items: flex-start;
+    text-align: start;
+    border-left: 2px solid var(--black);
+
+    & > .TimelineItem-Dot {
+      margin-left: calc(-2rem - 1px - 0.5rem);
+    }
+  }
+
+  &:nth-child(2n) {
+    align-self: flex-start;
+    align-items: flex-end;
+    text-align: end;
+    border-right: 2px solid var(--black);
+
+    & > .TimelineItem-Dot {
+      margin-right: calc(-2rem - 1px - 0.5rem);
+    }
+  }
+
+  &:last-child {
+    padding-bottom: 0rem;
+  }
+}
+
+@media screen and (max-width: $breakpoint-two) {
+  .TimelineItem {
+    width: 100%;
+    padding-right: 0;
+
+    &:nth-child(2n) {
+      align-self: flex-end;
+      align-items: flex-start;
+      text-align: start;
+      border-right: none;
+      border-left: 2px solid var(--black);
+
+      & > .TimelineItem-Dot {
+        margin-left: calc(-2rem - 1px - 0.5rem);
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+@import '../../scss/settings.scss';
+
+.ProjectItem {
+  width: auto;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 3fr 3fr 1.5fr;
+  grid-template-areas:
+    'image title title'
+    'image text text'
+    'image links period';
+  gap: 1rem 2rem;
+
+  & a {
+    text-decoration: none;
+    color: var(--theme);
+  }
+
+  &-ImageContainer {
+    grid-area: image;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-Image {
+    height: 12rem;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 0.5rem;
+  }
+
+  &-Header {
+    grid-area: title;
+    text-align: start;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.8rem;
+    text-align: start;
+    height: fit-content;
+  }
+
+  &-Description {
+    grid-area: text;
+    text-align: start;
+  }
+
+  &-Links {
+    grid-area: links;
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+
+    & a {
+      color: var(--black);
+
+      &:hover {
+        color: var(--theme);
+      }
+    }
+  }
+
+  &-LinkIcon {
+    color: inherit;
+  }
+
+  &-LinkTitle {
+    color: inherit;
+  }
+
+  &-FooterLink {
+    overflow: hidden;
+    width: 4.5rem;
+    height: fit-content;
+    text-align: center;
+    text-decoration: none;
+    color: var(--black);
+
+    &:hover {
+      color: var(--theme);
+    }
+  }
+
+  &-Period {
+    grid-area: period;
+    background-color: var(--grey);
+    color: var(--black);
+    font-weight: bold;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    margin-right: 0rem;
+  }
+
+  &-SpaceAfter {
+    margin-bottom: 0.7rem;
+  }
+
+  // &:nth-child(2n) {
+  //   grid-template-columns: 3fr 1.5fr 3fr;
+  //   grid-template-areas:
+  //     'title title image'
+  //     'text text image'
+  //     'links period image';
+  // }
+}
+
+@media screen and (max-width: $breakpoint-one) {
+  .ProjectItem {
+    grid-template-columns: 4fr 3fr 2fr;
+  }
+}
+
+@media screen and (max-width: $breakpoint-two) {
+  .ProjectItem {
+    grid-template-columns: auto;
+    grid-template-areas:
+      'title title'
+      'image image'
+      'period period'
+      'text text'
+      'links links';
+
+    &-ImageContainer {
+      width: fit-content;
+    }
+
+    &-Links {
+      flex-direction: row-reverse;
+    }
+
+    &-Period {
+      margin: auto;
+      margin-left: 0rem;
+    }
+  }
+}

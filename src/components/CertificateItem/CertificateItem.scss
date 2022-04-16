@@ -1,0 +1,90 @@
+@import '../../scss/settings.scss';
+
+.CertificateItem {
+  display: grid;
+  gap: 1rem 2rem;
+  grid-template-columns: 8rem auto;
+  grid-template-areas:
+    'image title'
+    'image id'
+    'image badge';
+
+  &-ImgWrap {
+    grid-area: image;
+  }
+
+  &-Img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &-Title {
+    grid-area: title;
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: bold;
+    min-width: 0;
+    min-height: 0;
+    max-width: 100%;
+
+    & span {
+      width: inherit;
+    }
+  }
+
+  &-DigitalBadge {
+    grid-area: badge;
+    display: flex;
+    align-items: flex-end;
+    color: var(--theme);
+    font-size: 1.3rem;
+    height: 100%;
+    width: 100%;
+
+    & a {
+      height: fit-content;
+      width: fit-content;
+    }
+
+    & span {
+      margin-left: 0.5rem;
+    }
+  }
+
+  &-Id {
+    grid-area: id;
+    height: fit-content;
+    width: fit-content;
+    text-align: start;
+    font-style: italic;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+}
+
+@media screen and (max-width: $breakpoint-two) {
+  .CertificateItem {
+    grid-template-columns: unset;
+    grid-template-areas:
+      'title title'
+      'image image'
+      'id    id'
+      'badge badge';
+
+    &-Img {
+      height: 10rem;
+    }
+
+    &-DigitalBadge {
+      justify-content: center;
+    }
+
+    &-Id {
+      text-align: center;
+      width: 100%;
+    }
+  }
+}

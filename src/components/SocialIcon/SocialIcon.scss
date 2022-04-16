@@ -1,0 +1,47 @@
+@import '../../scss/settings.scss';
+
+.SocialIcon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 2rem;
+  background-color: var(--dark-grey);
+  margin: 0rem 0.25rem;
+
+  &-Icon {
+    color: var(--white);
+    font-size: 1.4rem;
+  }
+
+  &:hover {
+    background-color: var(--theme);
+  }
+
+  &-Tooltip {
+    color: var(--theme);
+    width: 10rem;
+    margin: auto;
+    margin-top: 3.5rem;
+    visibility: hidden;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    left: calc(-5rem + 1.5rem);
+  }
+
+  &:hover &-Tooltip {
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: $breakpoint-two) {
+  .SocialIcon {
+    &-Tooltip {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,92 @@
+@import '../../scss/settings.scss';
+
+.AboutMe {
+  margin-top: 35rem;
+  display: flex;
+
+  & .TileTitle {
+    margin-top: 0.5rem;
+  }
+
+  &-About {
+    width: 50%;
+    padding-right: 1rem;
+    text-align: start;
+
+    & > p {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &-Bio {
+    width: 50%;
+    display: flex;
+    padding-left: 1rem;
+    flex-direction: column;
+    overflow: hidden;
+    word-wrap: break-word;
+
+    &-Item {
+      display: flex;
+      margin: 0.25rem 0;
+
+      &-Name {
+        display: flex;
+        width: 30%;
+        text-align: start;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      &-Value {
+        width: 70%;
+        text-align: start;
+      }
+    }
+
+    &-IconContainer {
+      width: 1.3rem;
+      margin-right: 0.5rem;
+      opacity: 0.8;
+    }
+
+    &-Item:nth-child(2) {
+      margin-top: 0rem;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-one) {
+  .AboutMe {
+    &-Bio {
+      &-Item {
+        flex-direction: column;
+        &-Name {
+          width: 100%;
+        }
+
+        &-Value {
+          width: 100%;
+          margin: 0.25rem auto 1rem auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-two) {
+  .AboutMe {
+    flex-direction: column;
+
+    &-About {
+      width: 100%;
+      padding-right: 0;
+    }
+
+    &-Bio {
+      width: 100%;
+      padding-left: 0;
+      margin-top: 1.5rem;
+    }
+  }
+}

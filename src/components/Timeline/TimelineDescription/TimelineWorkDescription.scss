@@ -1,0 +1,30 @@
+.TimelineWorkDescription {
+  &-Employer {
+    margin-bottom: 1rem;
+
+    & > a,
+    & > div {
+      text-align: inherit;
+      background-color: var(--theme);
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      width: fit-content;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+  }
+
+  &-EmploymentRate {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &-EmployerIcon {
+    margin-right: 0.5rem;
+  }
+
+  &-Description {
+    text-align: inherit;
+  }
+}

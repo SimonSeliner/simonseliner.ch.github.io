@@ -1,0 +1,26 @@
+@import '../../scss/settings.scss';
+
+.Skills {
+  &-Items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &-ProgressBar {
+    width: 49%;
+    height: 4rem;
+
+    & > .ProgressBar-Bar {
+      height: 1.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-two) {
+  .Skills {
+    &-ProgressBar {
+      width: 100%;
+    }
+  }
+}
