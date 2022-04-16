@@ -1,6 +1,6 @@
-# michelbongard.ch.github.io
+# simonseliner.ch.github.io
 
-This is the github-pages repository for the website <a href="https://michelbongard.ch">michelbongard.ch</a>.
+This is the github-pages repository for the website <a href="https://simonseliner.ch">simonseliner.ch</a>.
 
 Built with React.
 
