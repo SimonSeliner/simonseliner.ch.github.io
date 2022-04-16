@@ -12,18 +12,12 @@ const Footer = (): JSX.Element => {
       </div>
       <div className="Footer-Name">{data.title}</div>
       <div className="Footer-Info">
-        Built with{' '}
-        <a
-          href="https://reactjs.org/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          React
-        </a>
-        .
+        custom text :D at the end of the page (foot)
       </div>
     </div>
   );
 };
 
 export default Footer;
+
+
